@@ -1,0 +1,57 @@
+from graphviz import Digraph
+
+# Create a directed graph
+diagram = Digraph("Network_Diagram", format="png")
+
+# Recycling Strategy and Implementation
+diagram.node("1.1.1", "Identify types of electronics")
+diagram.node("1.1.2", "Develop operating procedures")
+diagram.node("1.1.3", "Establish collection points")
+diagram.node("1.1.4", "Increase public awareness")
+
+# Dependencies for Recycling Strategy
+diagram.edge("1.1.1", "1.1.2")  # Task 1.1.1 → Task 1.1.2
+diagram.edge("1.1.2", "1.1.3")  # Task 1.1.2 → Task 1.1.3
+diagram.edge("1.1.3", "1.1.4")  # Task 1.1.3 → Task 1.1.4
+
+# IT Asset Allocation
+diagram.node("2.1.1", "Identify spare IT assets")
+diagram.node("2.1.2", "Develop collection strategy")
+diagram.node("2.2.1", "Identify refurbishment needs")
+diagram.node("2.2.2", "Obtain repair resources")
+diagram.node("2.2.3", "Upgrade IT for distribution")
+
+# Dependencies for IT Asset Allocation
+diagram.edge("2.1.1", "2.1.2")  # Task 2.1.1 → Task 2.1.2
+diagram.edge("2.2.1", "2.2.2")  # Task 2.2.1 → Task 2.2.2
+diagram.edge("2.2.2", "2.2.3")  # Task 2.2.2 → Task 2.2.3
+
+# Community Engagement and Awareness
+diagram.node("3.1.1", "Identify target audiences")
+diagram.node("3.1.2", "Plan and schedule workshops")
+diagram.node("3.2.1", "Develop training schedule")
+diagram.node("3.2.2", "Conduct workshops")
+diagram.node("3.3.1", "Collaborate with local media")
+diagram.node("3.3.2", "Launch social media campaign")
+
+# Dependencies for Community Engagement
+diagram.edge("3.1.1", "3.1.2")  # Task 3.1.1 → Task 3.1.2
+diagram.edge("3.2.1", "3.2.2")  # Task 3.2.1 → Task 3.2.2
+diagram.edge("3.3.1", "3.3.2")  # Task 3.3.1 → Task 3.3.2
+
+# Regulatory Compliance
+diagram.node("4.1.1", "Identify required regulations")
+diagram.node("4.1.2", "Engage with agencies")
+diagram.node("4.2.1", "Understand relevant laws")
+diagram.node("4.2.2", "Conduct audits")
+diagram.node("4.3.1", "Document destruction process")
+
+# Dependencies for Regulatory Compliance
+diagram.edge("4.1.1", "4.1.2")  # Task 4.1.1 → Task 4.1.2
+diagram.edge("4.2.1", "4.2.2")  # Task 4.2.1 → Task 4.2.2
+diagram.edge("4.3.1", "4.3.1")  # Task 4.3.1 → Task 4.3.1
+
+# Render the diagram
+diagram.render("hurricane_recycling_network_diagram", view=True)
+
+
